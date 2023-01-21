@@ -34,8 +34,13 @@ const obj2 = {
 };
 console.log(Object.keys(obj1))
 function samedata(data, data2){
-    
-    const obj1length=data.length
-    const obj2length=data2.length
+
+    const obj1length=Object.keys(data).length
+    const obj2length=Object.keys(data2).length
+
+    if(obj1length==obj2length){
+      return Object.keys(data).some((elem)=> data2.hasOwnProperty(elem) &&  data[elem]== data2[elem] )
+    }
+    return false
 }
 console.log(samedata(obj1,obj2))
