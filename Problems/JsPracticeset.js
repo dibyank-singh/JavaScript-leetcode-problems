@@ -78,3 +78,91 @@ function findcountusingReduce(arr){
     return dpldata;
 }
  console.log( findcountusingReduce(arr2))
+
+//  5. How to find unique value from an array in sorted order ? 
+
+// Input=[2,3,5,6,8,9,23,35,4,6,]
+// Output=[2,3,4,5,6,8,9,23,35]
+
+const arr3=[2,3,5,6,8,9,23,35,4,6,]
+
+const sorteduniueval= arr3.filter((elem, index, arr3)=> arr3.indexOf(elem) == index)
+   sorteduniueval.sort((a,b)=>{
+    return a-b;
+   }
+   )
+   console.log(sorteduniueval)
+
+
+// 6. How to find maximum value in numbered array ? 
+
+const arr4=[2,3,5,6,8,9,23,35,4,6,]
+
+function findmaximum(arr){
+   const maxnum= arr.reduce((pre, curt)=>{
+      return pre >curt ? pre : curt
+    })
+    return maxnum
+
+}
+
+console.log(findmaximum(arr4))
+
+// 7. How to find minimum value in a numbered array ?
+const arr5=[2,3,5,6,8,9,23,35,4,6,]
+
+function findminimum(arr){
+   const maxnum= arr.reduce((pre, curt)=>{
+      return pre <curt ? pre : curt
+    })
+    return maxnum
+
+}
+
+console.log(findminimum(arr5))
+
+// 8. find average of number in numbered array ?
+
+// Input= [2,3,4,8,4]
+// Avg= sum of total num/ number of elem 
+// 2+3+4+8+4/5
+
+let arr6=[2,3,4,8,4]
+function findAverage(arr){
+    let totalval=0
+    arr.map((elem)=>{
+     totalval= (elem+totalval)
+     finalavg=totalval/arr.length
+    })
+    return finalavg
+
+}
+console.log(findAverage(arr6))
+
+// 9. Uppercase the first caracter in a string array ? 
+
+// Input=["divyank"]
+// Output=["Divyank"]
+let stringdata=["divyank", "preity", "Manju", "divyanshu", "narendra"]
+
+function firstlatteruppercase(data){
+     let Alluppercasename=[];
+    for(let name of data){
+       finalname=  name.charAt(0).toUpperCase() + name.substr(1);
+       Alluppercasename.push(finalname)
+
+    }
+    return Alluppercasename
+}
+ console.log( firstlatteruppercase(stringdata))
+
+//  10. How to make sentence out of a given sting array ?
+
+// input=["Welcome", "to", "the","world", "of","Javascript"]
+// Output=["Welcome to the world of Javascript"]
+
+const inputname=["Welcome", "to", "the","world", "of","Javascript"]
+
+  var joinedword=inputname.join(" ")
+  console.log(joinedword)
+
