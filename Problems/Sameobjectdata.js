@@ -44,3 +44,15 @@ function samedata(data, data2){
     return false
 }
 console.log(samedata(obj1,obj2))
+
+
+// Output based question...
+let person = { name: 'Ayush' };
+const members = [person];
+person = null;
+
+// Output - Null 
+console.log(person); 
+
+// output- {name: "ayush"}
+console.log(members)
