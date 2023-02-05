@@ -166,3 +166,37 @@ const inputname=["Welcome", "to", "the","world", "of","Javascript"]
   var joinedword=inputname.join(" ")
   console.log(joinedword)
 
+// 11. How to check if an array contains any element of another array ?
+
+// InputA=[2,3,5,2,6]
+// InputB=[,2,7,8,4,5]
+
+// Output=[2,5] or True
+
+const num1=[2,3,5,2,6]
+const num2=[9,7,8,4,6]
+
+let matchnum=num1.some((elem)=> num2.includes(elem))
+console.log(matchnum)
+
+// 12. Check if the strings are Anagram of Each other ?
+
+// input= ACA
+// Output=ACA
+
+const string1="Abcd"
+const string2="cdaB"
+
+function checkanagram(str1, str2){
+
+    let strA= str1.toLowerCase()
+    let strB= str2.toLowerCase()
+
+    strA=strA.split("").sort().join("")
+    console.log(strA)
+    strB=strB.split("").sort().join("")
+
+    return strA=== strB
+
+}
+ console.log( checkanagram(string1,string2))
