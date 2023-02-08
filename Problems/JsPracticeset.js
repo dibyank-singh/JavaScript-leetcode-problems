@@ -318,4 +318,37 @@ function checkPalindrom(plstr){
 }
 console.log(checkPalindrom(palInput))
 
+// 17. How can you combine two array into a third array using spread operator ?
 
+let arrayA=[1,2,3,5,6,3]
+let arrayB=[8,2,3,3,34,3]
+
+let SingleArray=[...arrayA, ...arrayB]
+console.log(SingleArray)
+
+
+// 17. How do you sort and reverse an array without changing the original array ? 
+
+let inputArray=[2,4,6,7,4,3,26,4,2]
+
+const newinputArray= inputArray.slice().reverse()
+console.log(newinputArray)
+
+// 18.  How can we insert an element at a specific index in an array ?
+
+let testarray=[2,4,5,2,4,6,3]
+
+let elem=86
+let position=2
+
+testarray.splice(position, 0, elem)
+console.log(testarray)
+
+// 19. Detele an element at a specific index in an array ?
+
+let testarray2=[2,3,4,5,2,5,7,4,3,]
+
+let deletepos=3
+
+testarray2.splice(deletepos, 1)
+console.log(testarray2)
