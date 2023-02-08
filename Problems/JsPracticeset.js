@@ -184,8 +184,10 @@ console.log(matchnum)
 // input= ACA
 // Output=ACA
 
-const string1="Abcd"
-const string2="cdaB"
+const string1="caba"
+const string2="abca"
+// const string1="121"
+// const string2="121"
 
 function checkanagram(str1, str2){
 
@@ -200,3 +202,120 @@ function checkanagram(str1, str2){
 
 }
  console.log( checkanagram(string1,string2))
+
+// 13. How can you extract a few field from the given json object and from a new array ? 
+
+ const inputdata={
+    
+    employee:[
+       {
+        name:"Divyank",
+        id:1
+       },
+       {
+        name:"Priya",
+        id:2
+       },
+       {
+        name:"Preity",
+        id:3
+       },
+       {
+        name:"Neha",
+        id:4
+       },
+    ]
+ }
+
+ const result= inputdata.employee.map((elem)=>{
+    let newstudobj={
+            name: elem.name,
+            id: elem.id
+    }
+    return newstudobj
+ })
+console.log(result)
+
+
+//14. filter a given object based on certain condition and return the corresponding object ?
+
+
+const filterobj={
+
+    "student":[
+        {
+            "firstname":"Divyank",
+            "lastname":"Singh",
+            "studentId":101        
+        },
+        {
+            "firstname":"gopal",
+            "lastname":"Singh",
+            "studentId":102        
+        },
+        {
+            "firstname":"Sakshi",
+            "lastname":"Singh",
+            "studentId":103        
+        },
+
+    ]
+}
+
+const filterobjres=filterobj.student.filter((elem)=>{
+  return elem.studentId > 102 ? elem : ""
+//   return elem.firstname == "gopal" ? elem : ""
+})
+console.log(filterobjres)
+
+// 15. Check if the variable passed is an array or not ?
+
+let arraytestdata=[2,3,4,5,6,7,8,9,10,13]
+
+console.log(Array.isArray(arraytestdata))
+ 
+// How to empty an array ?
+
+// 4ways to empty an array...
+
+let checkamptyArray=[2,3,5,6,3,46]
+
+
+// 1. Menthod 
+// checkamptyArray=[]
+// console.log(checkamptyArray)
+
+// 2nd Method 
+
+//  checkamptyArray.length=0
+// console.log(checkamptyArray)
+
+// 3rd Method 
+
+// while(checkamptyArray.length >0){
+//     checkamptyArray.pop()
+// }
+// console.log(checkamptyArray)
+
+// 4th Method 
+
+checkamptyArray.splice(0,checkamptyArray.length)
+console.log(checkamptyArray)
+
+
+// 16.  write a funcction to check if a given string is a Palindrome or not ? 
+
+//   Input="level"
+// Output="level"
+
+let palInput="level"
+
+function checkPalindrom(plstr){
+
+    let str=plstr.toLowerCase()
+    return (str== plstr.split("").reverse().join(""))
+
+}
+console.log(checkPalindrom(palInput))
+
+
