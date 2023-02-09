@@ -352,3 +352,62 @@ let deletepos=3
 
 testarray2.splice(deletepos, 1)
 console.log(testarray2)
+
+// 20. Delete a specific element in a array ?
+
+let deletespecArr=[2,4,4,55,46,4,5,3]
+
+let deletelem=55;
+
+let resltarr= deletespecArr.filter((elem)=> elem !== deletelem)
+console.log(resltarr)
+
+// 21. Clone an Object
+
+ let student={
+    id:1,
+    name:"Divyank",
+    job:"full stack developer"
+ }
+
+// There are mainly 2 ways to clone an object,
+
+// 1st way
+ const newStudent= Object.assign({}, student)
+
+ console.log(newStudent)
+
+//  2nd way
+
+const newStudentwithSpreadop= {...student}
+console.log(newStudentwithSpreadop)
+
+// 21. Add an element as beginning of array ?
+
+const employee21=[2,3,4,5,6,7,8,8]
+
+const elemtoinsert=65
+// using spread operator.
+const newempl=[elemtoinsert, ...employee21]
+console.log(newempl)
+
+// Using array unshift method- Not good way to deal, cuz it make changes in origin array.
+
+  employee21.unshift(elemtoinsert)
+console.log(employee21)
+
+// 22. Delete an element in array at last position ?
+
+let newarr=[3,6,7,4,3,3,6,3,]
+
+// 1st way
+//  console.log(newarr.pop())
+
+//  2nd way 
+//  console.log(newarr.splice(-1))
+
+// 3rd way 
+
+const newchnarr=newarr.slice(0, -1)
+console.log(newchnarr)
+
