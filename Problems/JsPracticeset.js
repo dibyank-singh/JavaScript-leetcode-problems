@@ -411,3 +411,36 @@ let newarr=[3,6,7,4,3,3,6,3,]
 const newchnarr=newarr.slice(0, -1)
 console.log(newchnarr)
 
+//23 Program to find number of occurrences of the charecters in the given array ?
+
+// Input="Divyank Singh" Occurrence of i ?
+// output= 2
+
+  let inputstr="Divyank Singh"
+  let accrstr="i"
+
+  function checkaccrn(strelm, checkChar){
+     let strleng=strelm.length
+      
+      var counter=0
+     for(var i=0; i<strleng; i++){
+        if(strelm[i] == checkChar){
+      counter++
+        }
+    }
+    return counter
+  }
+  console.log(checkaccrn(inputstr, accrstr))
+
+
+//24. Find sum of natural numbers using recursion ? 
+
+  function sumnum(num){
+    if(num>0){
+        return num+ sumnum(num-1)
+    } else{
+      return num
+    }
+
+  }
+   console.log(sumnum(5))
