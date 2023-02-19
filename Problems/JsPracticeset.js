@@ -303,7 +303,7 @@ checkamptyArray.splice(0,checkamptyArray.length)
 console.log(checkamptyArray)
 
 
-// 16.  write a funcction to check if a given string is a Palindrome or not ? 
+// 16.  write a function to check if a given string is a Palindrome or not ? 
 
 //   Input="level"
 // Output="level"
@@ -437,10 +437,31 @@ console.log(newchnarr)
 
   function sumnum(num){
     if(num>0){
-        return num+ sumnum(num-1)
+        return num + sumnum(num-1)
     } else{
       return num
     }
 
   }
    console.log(sumnum(5))
+
+// 25 Check the number has same last digit ?
+
+// Input= 2435345 or Input2=2423525
+// output= True 
+
+let a=45
+let b=55
+let c=75
+
+ let resut1= a%10
+ let resut2= b%10
+ let resut3= c%10
+
+  if(resut1===resut2 && resut1===resut3){
+    console.log("All three inputs having same last number")
+  }else{
+    console.log("Noo, All last three digits  not same..")
+  }
+
+
