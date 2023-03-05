@@ -8,8 +8,6 @@ let str="Hello Divyank Singh"
 
 function reversestr(data){
 return data.split(" ").reverse().join(" ")
-
-
 }
 var finalresult= reversestr(str) 
 console.log(finalresult)
@@ -57,16 +55,13 @@ console.log(findcountdpl(arr2))
 
 // Or we want output like this- [2=2, 3=2, 5=3]
 
-function findcountforeachelem(arr){
- 
-    const count={}
-    arr.forEach((elem)=>{ count[elem]= (count[elem] || 0) +1}
-    )
-    return count
-
-}
- console.log( findcountforeachelem(arr2))
-
+// function findcountforeachelem(arr){
+//     const count={}
+//     arr.forEach((elem)=>{ count[elem]= (count[elem] || 0) +1}
+//     )
+//     return count
+// }
+//  console.log( findcountforeachelem(arr2))
 
 //  Or Using Reduce Method....
 
@@ -77,6 +72,7 @@ function findcountusingReduce(arr){
     },{})
     return dpldata;
 }
+
  console.log( findcountusingReduce(arr2))
 
 //  5. How to find unique value from an array in sorted order ? 
@@ -145,16 +141,26 @@ console.log(findAverage(arr6))
 // Output=["Divyank"]
 let stringdata=["divyank", "preity", "Manju", "divyanshu", "narendra"]
 
-function firstlatteruppercase(data){
-     let Alluppercasename=[];
-    for(let name of data){
-       finalname=  name.charAt(0).toUpperCase() + name.substr(1);
-       Alluppercasename.push(finalname)
+// Using Map 
 
-    }
-    return Alluppercasename
+function firstlatteruppercase(data){
+ let findadda=data.map((elm)=> elm.charAt(0).toUpperCase()+elm.substr(1))
+ return findadda
 }
- console.log( firstlatteruppercase(stringdata))
+ console.log(firstlatteruppercase(stringdata))
+
+// Using For Loop.
+
+// function firstlatteruppercase(data){
+//      let Alluppercasename=[];
+//     for(let name of data){
+//        finalname=  name.charAt(0).toUpperCase() + name.substr(1);
+//        Alluppercasename.push(finalname)
+
+//     }
+//     return Alluppercasename
+// }
+//  console.log( firstlatteruppercase(stringdata))
 
 //  10. How to make sentence out of a given sting array ?
 
@@ -186,6 +192,7 @@ console.log(matchnum)
 
 const string1="caba"
 const string2="abca"
+
 // const string1="121"
 // const string2="121"
 
@@ -301,7 +308,7 @@ let checkamptyArray=[2,3,5,6,3,46]
 
 checkamptyArray.splice(0,checkamptyArray.length)
 console.log(checkamptyArray)
-
+  
 
 // 16.  write a function to check if a given string is a Palindrome or not ? 
 
@@ -317,6 +324,7 @@ function checkPalindrom(plstr){
 
 }
 console.log(checkPalindrom(palInput))
+
 
 // 17. How can you combine two array into a third array using spread operator ?
 
@@ -465,3 +473,189 @@ let c=75
   }
 
 
+  //26. check substring in string?
+
+  // input="hello bro i'm here"
+  // substr="bro"
+
+  let inputstr3="hello bro i'm here"
+  let substr="bro"
+      
+  function checksubstr(inputstr, substr){
+
+    var test=inputstr.includes(substr)
+    return test
+
+  }
+ console.log(checksubstr(inputstr3,substr))
+
+//  27. Print all even number from 0-10 ?
+
+// input= 1,2,3,4,5,6,7,8,9,10
+// output=num/2==0 So Ans is 2,4,6,8,10
+
+let lastnode=10
+
+function checkevennum(arr){
+  let i 
+  console.log("All even numbers from 1 to 10")
+  for (i=1;i<=arr;i++)
+  {
+    if(i%2==0){
+      console.log(i)
+    }
+  } 
+}
+checkevennum(lastnode)
+ 
+  // 28. Print sum of number within a array ?
+
+  // Input= [2,3,4,5,3,5,3]
+  // Output=[2+3+4+5+3+5+3]=25
+
+  let sumwithinArray=[2,3,4,5,3,5,3]
+  let resultsofsum =sumwithinArray.reduce((preval, curtval)=> {
+    return preval+curtval
+  }
+  )
+  console.log(resultsofsum)
+// 29.Create a function that filters out negative numbers ?
+
+// input=[2,3,4,-5,-7,3]
+// output=[-5,-7]
+
+let negativearr=[2,3,4,-5,-7,3]
+function filternegativeNum(arr){
+   
+  return arr.filter((elm)=> elm>0 )
+}
+ console.log( filternegativeNum(negativearr))
+
+//  30. Remove the spaces found in a string ?
+
+// Input="Div   yank"
+// output="Divyank"
+
+let Spacestr="Div  yank"
+
+let datares=Spacestr.split(" ").join("")
+console.log(datares)
+
+
+
+
+
+
+// 31. JavaScript Program to Check Armstrong Number ?
+// A positive integer is called an Armstrong number (of order n) if - abcd... = an + bn + cn + dn + ...
+
+// Exmpl- 153 = 1*1*1 + 5*5*5 + 3*3*3
+
+let numberarms=153
+let temp=numberarms
+let sum=0
+while(temp>0){
+   let add= temp%10
+   console.log(add)
+   sum+=add*add*add
+   console.log(sum)
+   temp=parseInt(temp/10)
+   console.log(temp)  
+}
+if(sum==numberarms){
+  console.log("Yes it's armstrong number")
+}else{
+  console.log("Yes It's not a armstrong number")
+}
+
+// 32. Print fictorial of number ?
+
+// Try to solve it using recursion.
+// Input=5 1*2*3*4*5
+
+// program to find the factorial of a number
+var num=5
+function factorial(x) {
+  // if number is 0
+  if (x == 0) {
+      return 1;
+  }
+  // if number is positive
+  else {
+      return x * factorial(x - 1);
+  }
+}
+// calling factorial() if num is positiv
+  console.log(`The factorial of ${num} is ${factorial(num)}`);
+
+  // 33. JavaScript Program to Print the Fibonacci Sequence ?
+
+  // The Fibonacci sequence is a set of integers (the Fibonacci numbers) that starts with a zero, followed by a one,
+  //  then by another one, and then by a series of steadily increasing numbers. The sequence follows the rule that each
+  //  number is equal to the sum of the preceding two numbers.
+
+  // Ex- The Fibonacci sequence begins with the following 14 integers:
+
+  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 ...
+    
+   let A=0
+   let B=1
+    for( var i=1; i<=10;i++){
+      let res=A+B
+        A=B
+        B=res
+       console.log(res)
+    }
+
+    // program to display fibonacci sequence using recursion
+
+// In a Simpler way, Fibonacci series using recursion...
+
+ function Fibnew(num){
+  if(num < 2) {
+    return num;
+}
+   return Fibnew(num-1)+ Fibnew(num-2) 
+   
+ }
+
+ const nTerm = 10;
+
+if(nTerm<=0) {
+  console.log('Enter a positive integer.');
+}
+
+  for( let i=0; i<nTerm; i++){
+    Fibnew(i)
+  } 
+
+//34. Program to check a string with balanced brackets.
+
+const Isvalid=(str)=>{
+
+let s=str.replace(/\s+/g, '')
+
+
+}
+
+let strmmm1=("({} [] ({}))")
+let strmmm2=("{{")
+console.log(Isvalid(strmmm1))
+
+
+
+// 35. input = [1,2,3,4,5,6] 
+                              
+// OutPut Array [1,1,2,6,24,120]
+
+const input = [1, 2, 3, 4, 5, 6]; 
+
+const output = [];
+
+let productSoFar = 1;
+for (let i = 0; i < input.length; i++) {
+  output[i] = productSoFar;
+  // debugger
+  productSoFar *= input[i];
+}
+console.log(output)
