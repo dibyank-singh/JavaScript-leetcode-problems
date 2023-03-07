@@ -648,7 +648,7 @@ console.log(Isvalid(strmmm1))
                               
 // OutPut Array [1,1,2,6,24,120]
 
-const input = [1, 2, 3, 4, 5, 6]; 
+const input = [1, 2, 3, 4, 5, 6];  
 
 const output = [];
 
@@ -658,4 +658,27 @@ for (let i = 0; i < input.length; i++) {
   // debugger
   productSoFar *= input[i];
 }
+
 console.log(output)
+
+// 36. input=[10,8,6,4,2,1]
+// output=[16,12,8,4,1,1]
+
+const input5=[10,8,6,4,2,1]
+
+const output5=[]
+
+let totalscr=0
+for(var i=0; i<input5.length-1; i++){
+     totalscr=input5[i]
+    let totalscn= totalscr-2
+     totalscn+=input5[i+1]
+     totalscr=totalscn
+     console.log(totalscr) 
+     output5.push(totalscr)
+}
+// Default num--
+output5.push(1)
+console.log(output5)
+
+// 

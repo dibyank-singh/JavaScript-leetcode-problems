@@ -64,6 +64,7 @@ function maxtimenum(arr){
         acc[val] = acc[val] ? acc[val] + 1 : 1;
         return acc; 
       }, {});
+//  return freq
 
   let mostFreq = 0;
   let result = null;
@@ -72,6 +73,7 @@ function maxtimenum(arr){
     if (freq[elem] > mostFreq) {
       mostFreq = freq[elem];
       result = elem;
+      debugger 
     }
   }
 
