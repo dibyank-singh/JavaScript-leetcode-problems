@@ -116,9 +116,24 @@ function filterObjectsWithNames(arr) {
   let Arrinput=[2,3,5,5,6,4,2,3]
   let Arrinput2=[4,2,4,5,6,7,2,2]
 
-  function SingleComArr(arr, arr2){
-     let res= arr.some((elm)=> arr2.includes(elm))
-     return res
-  }
-  console.log(SingleComArr(Arrinput,Arrinput2))
+// To retun value in Boolean only.
 
+//   function SingleComArr(arr, arr2){
+//      let res= arr.some((elm)=> arr2.includes(elm))
+    
+//   }
+//   console.log(SingleComArr(Arrinput,Arrinput2))
+
+// 2nd approch
+
+function getCommonElements(arr1, arr2) {
+    const commonElements = [];
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr2.includes(arr1[i])) {
+        commonElements.push(arr1[i]);
+      }
+    }
+    return commonElements;
+  }
+
+console.log( getCommonElements(Arrinput, Arrinput2))
