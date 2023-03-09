@@ -96,7 +96,7 @@ const arr4=[2,3,5,6,8,9,23,35,4,6,]
 
 function findmaximum(arr){
    const maxnum= arr.reduce((pre, curt)=>{
-      return pre >curt ? pre : curt
+       return pre >curt ? pre : curt
     })
     return maxnum
 
@@ -598,7 +598,7 @@ function factorial(x) {
 
   // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 ...
     
-   let A=0
+   let A=0 
    let B=1
     for( var i=1; i<=10;i++){
       let res=A+B

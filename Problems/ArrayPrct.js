@@ -81,4 +81,44 @@ function maxtimenum(arr){
 }    
 console.log(maxtimenum(input3))
 
+//6. Write a function that takes in a string and returns the longest word in the string.
+
+// let inputstr='hello divyank kumar singh"
+// output= "divyank" - Cuz it's longest words in this given string.
+
+let inputstr='hello divyank kumar singh'
+   function findLongWord(str){
+       let words= str.split(" ")
+         
+       let longestword=""
+       for( var i=0; i<words.length;i++){
+
+
+        if(words[i].length>longestword.length){
+            longestword=words[i]
+        }
+       }
+       
+       return longestword
+   }
+   console.log(findLongWord(inputstr))
+
+//    7.Write a function that takes in an array of objects and returns
+//    a new array containing only the objects that have a property called "name".  ?
+
+function filterObjectsWithNames(arr) {
+    return arr.filter(obj => obj.hasOwnProperty('name'));
+  }
+
+// 8. Write a function that takes in two arrays and returns 
+// a new array containing only the elements that are common between the two arrays. ?
+ 
+  let Arrinput=[2,3,5,5,6,4,2,3]
+  let Arrinput2=[4,2,4,5,6,7,2,2]
+
+  function SingleComArr(arr, arr2){
+     let res= arr.some((elm)=> arr2.includes(elm))
+     return res
+  }
+  console.log(SingleComArr(Arrinput,Arrinput2))
 
