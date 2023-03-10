@@ -137,3 +137,52 @@ function getCommonElements(arr1, arr2) {
   }
 
 console.log( getCommonElements(Arrinput, Arrinput2))
+
+// 9.Write a function that takes in an array of integers and returns the sum of all the even numbers.?
+
+//   Let input=[2,4,5,6,7,8,4,3,7,9,24,54,33] 
+
+let input4=[2,4,5,6,7,8,4,3,7,9,24,54,33] 
+
+  function findeven(arr){
+    let sum=0
+    for(var i=0; i<arr.length; i++){
+        if(arr[i]%2==0){
+            sum+=arr[i]
+        }
+    }
+    return sum 
+ 
+  }
+  console.log(findeven(input4))
+
+  // 1st with map- Add odd number
+
+  function findevenmap(arr){
+
+    let sum=0
+    arr.map((elm)=> {
+        if(elm%2!==0){
+            sum+=elm
+        }
+    } )
+     return sum
+  }
+  console.log(findevenmap(input4))
+
+//   10. Write a function that takes in a number and returns true if the number is prime, false otherwise.
+
+
+function isPrime(num) {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+   
+  console.log(isPrime(13))
