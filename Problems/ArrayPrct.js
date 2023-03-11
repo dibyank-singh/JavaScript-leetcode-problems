@@ -186,3 +186,88 @@ function isPrime(num) {
   }
    
   console.log(isPrime(13))
+
+//   11. Write a function to convert a string to a number in JavaScript. ?
+
+function stringToNumber(str) {
+    return +str;
+  }
+
+//   12. Write a function to sort an array of numbers in ascending or descending order in JavaScript.
+
+function sortArray(arr, order = "desc") {
+    if (order === "asc") {
+      return arr.sort((a, b) => a - b);
+    } else if (order === "desc") {
+      return arr.sort((a, b) => b - a);
+    } else {
+      throw new Error("Invalid order");
+    }
+  }
+  
+  // Example usage
+  const arr = [2, 4, 1, 7, 5];
+  console.log(sortArray(arr)); // Output: [1, 2, 4, 5]
+
+
+
+//   Medium level Problems-------------------------------------------------
+
+
+
+// 1. Write a function to find the first non-repeating character in a string in JavaScript. ?
+
+// Let's solve it by 2Step-    
+// 1. Add/Check charector count
+// 2. check how much time it appears.
+
+let strname="divyanksinghji"
+
+function NonRepeatChar(str){
+let charcount={}
+// 1st step- update char counter
+for( var i=0; i<str.length; i++){
+      let char= str.charAt(i)
+      charcount[char]= charcount[char] ? charcount[char]+1:1
+} 
+
+// 2nd step-  check with num count.
+for (let i = 0; i < str.length; i++) {
+    const char = str.charAt(i);
+    if (charcount[char] === 1) {
+      return char;
+    }
+  }
+
+return null
+
+}
+console.log(NonRepeatChar(strname))
+
+//2 For find firstrepeating char
+
+function findFirstRepeatingCharacter(str) {
+    // create an empty object to store character counts
+    const charCounts = {};
+  
+    // loop through the string and count occurrences of each character
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charAt(i);
+      charCounts[char] = charCounts[char] ? charCounts[char] + 1 : 1;
+    }
+  
+    // loop through the string again and return the first character with a count greater than 1
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charAt(i);
+      if (charCounts[char] > 1) {
+        return char;
+      }
+    }
+  
+    // if no repeating character is found, return null
+    return null;
+  }
+
+  console.log(findFirstRepeatingCharacter(strname))
+
+  
