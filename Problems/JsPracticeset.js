@@ -29,12 +29,13 @@ let Input=[2,3,5,5,3,2,5,7,8]
 //  3. How to find duplicate element in given array ?
 
 // Input=[2,3,5,5,7,6,8,9,5,3]
-// Output=[3,5]
+// Output=[3,5,5]
+
 
 let arr =[2,3,5,5,7,6,8,9,5,3]
 function finddublicate(arr){
-   
-    const dublicatedata=arr.filter((elm, index, Arrs)=> Arrs.indexOf(elm) !== index )
+    const dublicatedata=arr.filter((elm, index, Arrs)=> Arrs.indexOf(elm) !== index  )
+    
     console.log(dublicatedata)
     
 }
@@ -67,7 +68,7 @@ console.log(findcountdpl(arr2))
 
 function findcountusingReduce(arr){
     const dpldata= arr.reduce((pre, cunt)=>{
-    pre[cunt]=(pre[cunt] ||0)+1
+      pre[cunt]=pre[cunt]? pre[cunt]+1:1
     return pre
     },{})
     return dpldata;
@@ -144,7 +145,7 @@ let stringdata=["divyank", "preity", "Manju", "divyanshu", "narendra"]
 // Using Map 
 
 function firstlatteruppercase(data){
- let findadda=data.map((elm)=> elm.charAt(0).toUpperCase()+elm.substr(1))
+ let findadda=data.map((elm)=> elm.charAt(0).toUpperCase()+elm.slice(1))
  return findadda
 }
  console.log(firstlatteruppercase(stringdata))
@@ -331,6 +332,7 @@ console.log(checkPalindrom(palInput))
 let arrayA=[1,2,3,5,6,3]
 let arrayB=[8,2,3,3,34,3]
 
+
 let SingleArray=[...arrayA, ...arrayB]
 console.log(SingleArray)
 
@@ -482,7 +484,7 @@ let c=75
   let substr="bro"
       
   function checksubstr(inputstr, substr){
-
+ 
     var test=inputstr.includes(substr)
     return test
 
@@ -565,7 +567,7 @@ while(temp>0){
 if(sum==numberarms){
   console.log("Yes it's armstrong number")
 }else{
-  console.log("Yes It's not a armstrong number")
+  console.log("Yes It's not a armstr-ong number")
 }
 
 // 32. Print fictorial of number ?
@@ -591,6 +593,9 @@ function factorial(x) {
   // 33. JavaScript Program to Print the Fibonacci Sequence ?
 
   // The Fibonacci sequence is a set of integers (the Fibonacci numbers) that starts with a zero, followed by a one,
+ 
+ 
+ 
   //  then by another one, and then by a series of steadily increasing numbers. The sequence follows the rule that each
   //  number is equal to the sum of the preceding two numbers.
 
@@ -605,10 +610,10 @@ function factorial(x) {
         A=B
         B=res
        console.log(res)
+
     }
 
     // program to display fibonacci sequence using recursion
-
 // In a Simpler way, Fibonacci series using recursion...
 
  function Fibnew(num){
@@ -641,7 +646,6 @@ let s=str.replace(/\s+/g, '')
 let strmmm1=("({} [] ({}))")
 let strmmm2=("{{")
 console.log(Isvalid(strmmm1))
-
 
 
 // 35. input = [1,2,3,4,5,6] 

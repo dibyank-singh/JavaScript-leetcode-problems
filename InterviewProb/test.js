@@ -1,16 +1,24 @@
 
-let n = 5;
-let string = "";
-// External loop
-for (let i = 1; i <= n; i++) {
-  // printing spaces
-  for (let j = 1; j <= n - i; j++) {
-    string += " ";
-  }
-  // printing star
-  for (let k = 0; k < 2* i - 1; k++) {
-    string += "*";
-  }
-  string += "\n";
+
+console.log("Its working")
+
+let array = [1,2,3,4,5,6] 
+// Array [1,1,2,6,24,120]
+
+                              
+// Out Put Array [1,1,2,6,24,120]
+
+const input = [1, 2, 3, 4, 5, 6]; 
+
+const output = [];
+
+let productSoFar = 1;
+for (let i = 0; i < input.length; i++) {
+  output[i] = productSoFar;
+  // debugger
+  productSoFar *= input[i];
 }
-console.log(string);
+console.log(output)
+
+
+

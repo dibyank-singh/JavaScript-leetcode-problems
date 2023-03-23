@@ -119,8 +119,14 @@ function filterObjectsWithNames(arr) {
 // To retun value in Boolean only.
 
 //   function SingleComArr(arr, arr2){
-//      let res= arr.some((elm)=> arr2.includes(elm))
-    
+//        let resultdata=[]
+//    arr.some((elm)=> {
+//     if(arr2.includes(elm)){
+//       resultdata.push(elm)
+//     }
+//   } )
+// return resultdata
+        
 //   }
 //   console.log(SingleComArr(Arrinput,Arrinput2))
 
@@ -157,7 +163,7 @@ let input4=[2,4,5,6,7,8,4,3,7,9,24,54,33]
   console.log(findeven(input4))
 
   // 1st with map- Add odd number
-
+  
   function findevenmap(arr){
 
     let sum=0
@@ -244,6 +250,7 @@ return null
 }
 console.log(NonRepeatChar(strname))
 
+
 //2 For find firstrepeating char
 
 function findFirstRepeatingCharacter(str) {
@@ -261,7 +268,7 @@ function findFirstRepeatingCharacter(str) {
       const char = str.charAt(i);
       if (charCounts[char] > 1) {
         return char;
-      }
+      } 
     }
   
     // if no repeating character is found, return null
@@ -270,4 +277,21 @@ function findFirstRepeatingCharacter(str) {
 
   console.log(findFirstRepeatingCharacter(strname))
 
-  
+
+// 3. input is [2,5,6,-4] and output is [7,4,3,13] , solve it using javascript, 
+// in details- add all other index value except the current index value for each time
+
+function getarr(num){
+  let output=[]
+   for( var i=0; i<num.length; i++){
+     let sum=0
+     for(var j=0; j<num.length; j++){
+       if (j !== i) {
+         sum += num[j];
+       }
+     }
+  output.push(sum)
+   }
+   return output
+ }
+ console.log(getarr([2,5,6,-4]))
