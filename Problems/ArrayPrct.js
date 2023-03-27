@@ -295,3 +295,85 @@ function getarr(num){
    return output
  }
  console.log(getarr([2,5,6,-4]))
+
+
+//4. Find the second largest number in an array
+
+function findSecondLargest(arr) {
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
+    } else if (arr[i] > secondLargest && arr[i] !== largest) {
+      secondLargest = arr[i];
+    }
+  }
+  return secondLargest;
+}
+
+// Example usage:
+findSecondLargest([1, 2, 3, 4, 5]); // Output: 4
+
+// Or
+
+// using sort method 
+
+function findSecondLargest(arr) {
+  
+  const res=arr.sort((a,b)=>{
+     return (b-a)
+   })
+   return res[1]
+}
+// Example usage:
+console.log(findSecondLargest([1, 2, 3, 4, 5])); // Output: 4
+
+// 5.  Write a function that takes an array of strings and returns 
+// a new array containing only the strings that have a length of at least 5 characters.
+
+    // Using Reduce Method
+
+    
+function filterByLength(arr) {
+  return arr.reduce((acc, curr) => {
+    if (curr.length >= 5) {
+      acc.push(curr);
+    }
+    return acc;
+  }, []);
+}
+
+
+// Example usage:
+const input = ["hello", "world", "how", "are", "you", "doing", "today"];
+const output = filterByLength(input);
+console.log(output); // ["hello", "world", "doing", "today"]
+
+
+// 6. // Write a function that takes an array of strings
+// and returns a new array containing only the strings that contain the substring "apple".
+
+ function filterAppleStrings(arr){
+  let newarr=[]
+    for( var i=0; i<arr.length; i++){
+     
+      let str=arr[i]
+      if(str.includes("apple")){
+        newarr.push(str)
+      }
+ 
+    }
+return newarr
+
+}
+
+// Example usage:
+const input9 = ["apple pie", "banana bread", "apple cider", "pear tart"];
+const output2 = filterAppleStrings(input9);
+console.log(output); // ["apple pie", "apple cider"]
+
+
+
+
