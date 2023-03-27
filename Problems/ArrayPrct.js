@@ -375,5 +375,87 @@ const output2 = filterAppleStrings(input9);
 console.log(output); // ["apple pie", "apple cider"]
 
 
+// 7. Write a function that takes an array of numbers and returns
+//  the sum of all the positive numbers in the array.
+
+function sumPositiveNumbers(arr) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+    if (num > 0) {
+      sum += num;
+    }
+  }
+
+  return sum;
+}
+
+// Example usage:
+const input10 = [-1, 2, -3, 4, -5, 6];
+const output10 = sumPositiveNumbers(input10);
+console.log(output10); // 12
+
+// 8. Write a function that takes an array of strings and returns a new array 
+// containing only the strings that start with a capital letter.
+
+function filterCapitalStrings(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const str = arr[i];
+    if (str.charAt(0) === str.charAt(0).toUpperCase()) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+const input11 = ["Hello", "world", "How", "are", "you", "doing", "today"];
+const output11 = filterCapitalStrings(input11);
+console.log(output11); // ["Hello", "How"]
 
 
+// 9. Write a function that takes an array of strings and returns a new array 
+// containing only the strings that end with the letter "s".
+
+function filterStringsEndingWithS(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const str = arr[i];
+    if (str.charAt(str.length - 1) === "s") {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+const input13 = ["apples", "oranges", "pears", "grapes", "bananas"];
+const output13 = filterStringsEndingWithS(input13);
+console.log(output13); // ["apples", "oranges", "grapes"]
+
+
+// 10. Write a function that takes an array of strings and returns a new array
+// containing only the strings that contain the letter "a".
+
+function filterStringsContainingA(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf("a") !== -1) {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+const input14 = ["apple", "banana", "cherry", "orange", "pear"];
+const output14 = filterStringsContainingA(input14);
+console.log(output14); // ["apple", "banana", "orange", "pear"]
