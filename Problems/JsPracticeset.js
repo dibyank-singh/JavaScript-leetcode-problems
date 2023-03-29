@@ -685,4 +685,7 @@ for(var i=0; i<input5.length-1; i++){
 output5.push(1)
 console.log(output5)
 
+
+
+
 // 
